@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{country_name}}</h1>
+{% for language in countries[country]["languages"] %}
+<ul>
+    <li>{{language}}</li>
+</ul>
+<a href="{% url 'countries-list' %}">Link to Country List</a>
+{% endblock %}

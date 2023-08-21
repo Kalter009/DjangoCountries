@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for letter in alphabet}
+<p><a href="{% url 'countries_by_letters' {{letter}} %}">{{letter}}</a></p>
+{% endfor %}
+{% block letters %}
+<ul>
+{% for country in countries %}
+    <li><a href="{% url 'one_country' {{country["country"]}} %}">{{country["country"]}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
+{% endblock %}
